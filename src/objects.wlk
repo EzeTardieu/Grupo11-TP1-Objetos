@@ -1,7 +1,7 @@
 object rolando {
 	var hechizoFavorito = hechizoVariable
 	var fuerzaOscura = 5
-	var valorBaseLucha = 1
+	var valorLucha = 1
 	var artefactos = #{}
 	const valorBase = 3
 	
@@ -25,24 +25,19 @@ object rolando {
 		return fuerzaOscura
 	}
 	
-	method agregarArtefactoYSumarPoder(unArtefacto) {
-		artefactos.add(unArtefacto)
-		valorBaseLucha.sumarPoder(unArtefacto)
+	method agregarArtefacto(unArtefacto) {
+		if(!self.tieneAlArtefacto(unArtefacto)) {
+			artefactos.add(unArtefacto)
+			valorLucha += unArtefacto.aportaPoder()
+		}	
 	}
 	
-	method sumarPoder(unArtefacto) {
-		return unArtefacto.aportaPoder()
-	}
 	
 	method removerArtefacto(unArtefacto) {
 		if(self.tieneAlArtefacto(unArtefacto)){
 			artefactos.remove(unArtefacto)
-			valorBaseLucha.restarPoder(unArtefacto)
+				valorLucha -= unArtefacto.aportaPoder()
 		}
-	}
-	
-	method restarPoder(unArtefacto) {
-		return - unArtefacto.aportaPoder()
 	}
 	
 	method tieneAlArtefacto(unArtefacto) {

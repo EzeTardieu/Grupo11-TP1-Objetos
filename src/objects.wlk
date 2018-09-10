@@ -21,15 +21,10 @@ object hechizoVariable {
 	var nombre = "Espectro malefico"
 	
 	method poder() {
-		return nombre.size
+		return nombre.size()
 	}
 	
 	method esPoderoso() {
-		if(self.poder > 15){
-		return true
-		}
-		else{
-			return false
-		}
+		return self.poder() > 15
 	}
 }

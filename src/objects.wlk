@@ -3,9 +3,13 @@ object rolando {
 	var fuerzaOscura = 5
 	const valorBase = 3
 	
-	/*method nivelDeHechiceria() {
-		return ((valorBase * hechizoFavorito) + fuerzaOscura)
-	}*/
+	method nivelDeHechiceria() {
+		return ((valorBase * hechizoFavorito.poder()) + fuerzaOscura)
+	}
+	
+	method cambiarHechizoFavorito(unHechizo) {
+		hechizoFavorito = unHechizo
+	}
 }
 
 object hechizoBasico {
@@ -26,5 +30,9 @@ object hechizoVariable {
 	
 	method esPoderoso() {
 		return self.poder() > 15
+	}
+	
+	method cambiarDeNombre(unNombre) {
+		nombre = unNombre
 	}
 }

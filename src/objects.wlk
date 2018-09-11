@@ -1,5 +1,7 @@
 object rolando {
 	var hechizoFavorito = hechizoVariable
+	
+	// fuerza oscura debe ser un objeto ya que es una variable global
 	var fuerzaOscura = 5
 	var valorLucha = 1
 	var artefactos = #{}
@@ -12,6 +14,8 @@ object rolando {
 	method cambiarHechizoFavorito(unHechizo) {
 		hechizoFavorito = unHechizo
 	}
+	
+	// el eclipse debe ser un objeto porque afecta a varios elementos
 	
 	method hayEclipse() {
 		fuerzaOscura *= 2
@@ -43,8 +47,8 @@ object rolando {
 	method tieneAlArtefacto(unArtefacto) {
 		return artefactos.contains(unArtefacto)
 	}
-	
-	
+	// falta calculo de habilidad para lucha
+	// falta poder modificar la habilidad base de lucha de rolando
 }
 
 object hechizoBasico {

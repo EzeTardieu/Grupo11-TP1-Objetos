@@ -104,3 +104,33 @@ object mascaraOscura {
 		}
 	}
 }
+
+object armadura {
+	var duenio = rolando
+	var refuerzo = sinRefuerzo
+	method duenio(){
+		return duenio
+	}
+	method cambiarRefuerzo(nuevoRefuerzo){
+		refuerzo = nuevoRefuerzo
+	}
+	
+	method aportaPoder(){
+		return 2 + refuerzo.poder()	//pongo poder para que se puedan usar los hechizos como refuerzos
+		 }
+}
+object sinRefuerzo {
+	method poder(){
+		return 0	
+		}
+}
+object cotaDeMalla {
+	method poder(){
+		return 1
+	}
+}
+object bendicion {
+	method poder(){
+		return armadura.duenio().nivelDeHechiceria()
+	}
+}
